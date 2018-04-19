@@ -127,7 +127,9 @@
       url:"getPoints",
       async:true,
       success:function(data){
-        var uluru = {lat: Number(data['latitude']), lng: Number(data['longitude'])};
+
+        var data = JSON.parse(data);
+        var uluru = {lat: Number(data[0]['latitude']), lng: Number(data[0]['longitude'])};
        map  = new google.maps.Map(document.getElementById('google-map'), {
           zoom: 18,
           center: uluru
@@ -149,22 +151,22 @@
       url:"getPoints",
       async:true,
       success:function(data){
-       marker.setPosition({lat: (data['latitude']), lng: (data['longitude'])}); 
-       getPathPoints();
+        data = JSON.parse(data);
+       marker.setPosition({lat: (Number(data[data.length-1]['latitude'])), lng: Number((data[data.length-1]['longitude']))}); 
+       getPathPoints(data);
       }
      });
   }
 
-  function getPathPoints(){
+  function getPathPoints(result){
       var pathPoints = [];
-      $.getJSON('gpsdata',function(result){
         for(var i=0;i<result.length;i++){
           var latlng = result[i]['latitude']+","+result[i]['longitude'];
           pathPoints.push(latlng);
         }
         snapRoads(pathPoints);
-      });
   }
+
   function snapRoads(path){
       $.get('https://roads.googleapis.com/v1/snapToRoads', {
       interpolate: true,
