@@ -8,13 +8,10 @@ use Carbon\Carbon;
 
 class GpsController extends Controller
 {
- public function storeCoords(Request $request,$latitude,$longitude)
+ public function storeCoords(Request $request)
  {
- 		$coordinates = new Coordinate();
- 		$coordinates->latitude = $latitude;
- 		$coordinates->longitude = $longitude;
- 		$coordinates->save();
- 		return "success";
+ 		
+ 		dd($request);
  }
  public function sendCoordinates(Request $request)
  {

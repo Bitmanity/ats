@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/testAndroid/latitude/{id}/longitude/{id2}','GpsController@storeCoords');
+Route::get('/test','GpsController@storeCoords');
 Route::get('getPoints','GpsController@sendCoordinates');
