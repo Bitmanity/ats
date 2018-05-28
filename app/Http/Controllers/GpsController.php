@@ -10,8 +10,14 @@ class GpsController extends Controller
 {
  public function storeCoords(Request $request)
  {
- 		
- 		dd($request);
+ 	$inputs = $request->all();
+ 	 if($inputs!=null){
+ 	 $coord = new Coordinate();
+
+ 	$coord->received_data = $inputs;
+ 	$coord->save();
+ }
+ 
  }
  public function sendCoordinates(Request $request)
  {

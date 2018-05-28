@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','GpsController@storeCoords' );
 Route::get('/test','GpsController@storeCoords');
 Route::get('getPoints','GpsController@sendCoordinates');
