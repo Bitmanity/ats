@@ -16,6 +16,7 @@ class GpsController extends Controller
 
  	$coord->received_data = $inputs;
  	$coord->save();
+ 	echo "#200#";
  }
  
  }
