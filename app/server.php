@@ -3,12 +3,12 @@
 specify the Homestead IP if you are using homestead or, for local environment using
 WAMP, MAMP, ... use 127.0.0..1*/
 
-$server = new hoa\websocket\Server(
-    new hoa\socket\Server('tcp://139.59.81.69:8555')
+$server = new Hoa\Websocket\Server(
+    new Hoa\Socket\Server('tcp://139.59.81.69:8555')
 );
 
 //Manages the message event to get send data for each client using the broadcast method
-$server->on('message', function ( hoa\event\Bucket $bucket ) {
+$server->on('message', function ( Hoa\Core\Event\Bucket $bucket ) {
     $data = $bucket->getData();
     echo 'message: ', $data['message'], "\n";
     $bucket->getSource()->broadcast($data['message']);
