@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+set_time_limit(0);
+use App\Car;
 use Illuminate\Http\Request;
 use App\HistoryData;
 use App\LiveData;
@@ -55,6 +56,12 @@ class TestController extends Controller
       $data_array = explode('*',$data);
       if (count($data_array)>=5)
       {
+          if (Car::where('imei',$data_array[0])->first()=== null)
+          {
+              $car = new Car();
+              $car->imei = $data_array[0];
+              $car->save();
+          }
           for($i=1;$i<5;$i++)
           {
               $buffer = explode(",",$data_array[$i]);
@@ -80,8 +87,15 @@ class TestController extends Controller
         echo "Live Data Received:" . $data."\n";
         $sanitized_data = explode(',', $data);
         if (count($sanitized_data) == 14) {
+
             $extra_data = explode('*', $sanitized_data[0]);
             $imei = $extra_data[0];
+            if (Car::where('imei',$extra_data[0])->first()=== null)
+            {
+                $car = new Car();
+                $car->imei = $extra_data[0];
+                $car->save();
+            }
             $time = Carbon::createFromFormat('ymdhis', $extra_data[1]);
             $latitude = $sanitized_data[1];
             $longitude = $sanitized_data[3];
