@@ -20,6 +20,7 @@ class GpsController extends Controller
  public function sendCoordinates(Request $request,$imei)
  {
  		$coordinates = LiveData::where('imei',$imei)->get();
+
  		$coordinates = json_encode($coordinates);
  		return ($coordinates);
  }

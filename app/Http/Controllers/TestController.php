@@ -70,7 +70,7 @@ class TestController extends Controller
               $latitude = $buffer[1];
               $longitude = $buffer[3];
               $speed = $buffer[6];
-              $live = new HistoryData();
+              $live = new LiveData();
               $live->imei = $imei;
               $live->time = $time;
               $live->latitude = $latitude;
