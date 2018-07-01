@@ -140,7 +140,7 @@
   }
   function setPoints()
   {
-    if (marker == null)
+    if (marker === null)
     {
       marker = new google.maps.Marker({
         position:null,
@@ -202,7 +202,7 @@ function drawSnappedPolyline() {
   }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCze1J4prRUQbbQqku5UKDbwKhnJMsJJRI&callback=initMap" type="text/javascript"></script>
-</script>
+
 <script src="assets/js/scripts.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS -->
 
