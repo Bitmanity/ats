@@ -66,7 +66,7 @@ class TestController extends Controller
           {
               $buffer = explode(",",$data_array[$i]);
               $imei =$data_array[0];
-              $time = Carbon::createFromFormat('ymdhis', $buffer[0]);
+              $time = Carbon::createFromFormat('ymdHis', $buffer[0]);
               $latitude = $buffer[1];
               $longitude = $buffer[3];
               $speed = $buffer[6];
@@ -96,7 +96,7 @@ class TestController extends Controller
                 $car->imei = $extra_data[0];
                 $car->save();
             }
-            $time = Carbon::createFromFormat('ymdhis', $extra_data[1]);
+            $time = Carbon::createFromFormat('ymdHis', $extra_data[1]);
             $latitude = $sanitized_data[1];
             $longitude = $sanitized_data[3];
             $speed = $sanitized_data[6];
