@@ -75,98 +75,106 @@
                 <label>IMEI</label> &nbsp;
                 <select class="select2" id="imei-select">
                     @foreach($cars as $imei)
-                    <option value="{{$imei->imei}}">{{$imei->imei}}</option>
+                        <option value="{{$imei->imei}}">{{$imei->imei}}</option>
                     @endforeach
                 </select>
             </div>
             <div class="row">
                 <div class="col-lg-7" id="google-map">
 
-
                 </div>
-                <div class="col-lg-5">
-                    <div class="sm-m-l-5 sm-m-r-5">
-                        <div class="card-group horizontal" id="accordion" role="tablist" aria-multiselectable="true">
-                            <div class="card card-default m-b-0">
-                                <div class="card-header " role="tab" id="headingOne">
-                                    <h4 class="card-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                           aria-expanded="true" aria-controls="collapseOne">
-                                            Vehicles List
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseOne" class="collapse show" role="tabcard" aria-labelledby="headingOne">
-                                    <div class="card card-transparent">
-                                        <div class="card-header ">
-                                            <div class="card-title">
-                                                <div class="col-xs-12">
-                                                    <input type="text" id="search-table" class="form-control pull-right"
-                                                           placeholder="Search">
-                                                </div>
-                                            </div>
 
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="card-block">
-                                            <table class="table table-hover demo-table-search table-responsive-block"
-                                                   id="tableWithSearch">
-                                                <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Last Seen</th>
-                                                    <th>Connected</th>
-                                                    <th>Speed</th>
-                                                    <th>Ign</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td class="v-align-middle semi-bold" width="40%">
-                                                        <p>MH48-T-6014</p>
-                                                    </td>
-                                                    <td class="v-align-middle" width="40%">
-                                                        <p>April 13,2014 10:13</p>
-                                                    </td>
-                                                    <td class="v-align-middle" width="10%">
-                                                        <p>Yes</p>
-                                                    </td>
-                                                    <td class="v-align-middle" width="30%">
-                                                        <p>0.0 km/hr</p>
-                                                    </td>
-                                                    <td class="v-align-middle" width="10%">
-                                                        <p>Yes</p>
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+
+                <div class="col-lg-5">
+                    <div class="row">
+                        <div class="sm-m-l-5 sm-m-r-5">
+                            <div class="card-group horizontal" id="accordion" role="tablist"
+                                 aria-multiselectable="true">
+                                <div class="card card-default m-b-0">
+                                    <div class="card-header " role="tab" id="headingOne">
+                                        <h4 class="card-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                               aria-expanded="true" aria-controls="collapseOne">
+                                                Vehicles List
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="collapse show" role="tabcard"
+                                         aria-labelledby="headingOne">
+                                        <div class="card card-transparent">
+                                            <div class="card-header ">
+                                                <div class="card-title">
+                                                    <div class="col-xs-12">
+                                                        <input type="text" id="search-table"
+                                                               class="form-control pull-right"
+                                                               placeholder="Search">
+                                                    </div>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="card-block">
+                                                <table class="table table-hover demo-table-search table-responsive-block"
+                                                       id="tableWithSearch">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Last Seen</th>
+                                                        <th>Connected</th>
+                                                        <th>Speed</th>
+                                                        <th>Ign</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td class="v-align-middle semi-bold" width="40%">
+                                                            <p>MH48-T-6014</p>
+                                                        </td>
+                                                        <td class="v-align-middle" width="40%">
+                                                            <p>April 13,2014 10:13</p>
+                                                        </td>
+                                                        <td class="v-align-middle" width="10%">
+                                                            <p>Yes</p>
+                                                        </td>
+                                                        <td class="v-align-middle" width="30%">
+                                                            <p>0.0 km/hr</p>
+                                                        </td>
+                                                        <td class="v-align-middle" width="10%">
+                                                            <p>Yes</p>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card card-default m-b-0">
-                                <div class="card-header " role="tab" id="headingTwo">
-                                    <h4 class="card-title">
-                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                            Track
-                                        </a>
-                                    </h4>
-                                </div>
-                                <div id="collapseTwo" class="collapse" role="tabcard" aria-labelledby="headingTwo">
-                                    <div class="card card-transparent">
-                                        <div class="card-header ">
-                                            <div class="card-title">
-                                                <div class="col-xs-12">
-                                                    <div class="input-daterange input-group" id="datepicker-range">
-                                                        <input type="text" class="input-sm form-control" name="start"/>
-                                                        <div class="input-group-addon">to</div>
-                                                        <input type="text" class="input-sm form-control" name="end"/>
+                                <div class="card card-default m-b-0">
+                                    <div class="card-header " role="tab" id="headingTwo">
+                                        <h4 class="card-title">
+                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Track
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" role="tabcard" aria-labelledby="headingTwo">
+                                        <div class="card card-transparent">
+                                            <div class="card-header ">
+                                                <div class="card-title">
+                                                    <div class="col-xs-12">
+                                                        <div class="input-daterange input-group" id="datepicker-range">
+                                                            <input type="text" class="input-sm form-control"
+                                                                   name="start"/>
+                                                            <div class="input-group-addon">to</div>
+                                                            <input type="text" class="input-sm form-control"
+                                                                   name="end"/>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
 
-                                            <div class="clearfix"></div>
+                                                <div class="clearfix"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -267,12 +275,14 @@
     var marker = null;
     var snappedCoordinates = [];
     var imei = {{$cars[0]->imei}}
-    window.setInterval(function(){setPoints();},5000);
+    window.setInterval(function () {
+        setPoints();
+    }, 15000);
 
-    function initMap () {
+    function initMap() {
 
         $.ajax({
-            url: "getPoints/"+imei,
+            url: "getPoints/" + imei,
             async: true,
             success: function (data) {
                 var data = JSON.parse(data);
@@ -281,6 +291,7 @@
                     zoom: 18,
                     center: uluru
                 });
+                setPoints();
             }
         });
     }
@@ -293,7 +304,7 @@
             });
         }
         $.ajax({
-            url: "getPoints/"+imei,
+            url: "getPoints/" + imei,
             async: true,
             success: function (data) {
                 data = JSON.parse(data);
@@ -305,22 +316,21 @@
             }
         });
     }
-    function getPathPoints(result){
+    function getPathPoints(result) {
         var pathPoints = [];
-        for(var i=0;i<result.length;i++){
-            var latlng = result[i]['latitude']+","+result[i]['longitude'];
+        for (var i = 0; i < result.length; i++) {
+            var latlng = result[i]['latitude'] + "," + result[i]['longitude'];
             pathPoints.push(latlng);
         }
         snapRoads(pathPoints);
     }
 
-    function snapRoads(path){
+    function snapRoads(path) {
         $.get('https://roads.googleapis.com/v1/snapToRoads', {
             interpolate: true,
             key: apiKey,
             path: path.join('|'),
-        }, function(data)
-        {
+        }, function (data) {
             processSnapRoadPoints(data);
             drawSnappedPolyline();
         });
@@ -334,7 +344,7 @@
         });
         snappedPolyline.setMap(map);
     }
-    function processSnapRoadPoints(data){
+    function processSnapRoadPoints(data) {
         snappedCoordinates = [];
         placeIdArray = [];
         for (var i = 0; i < data.snappedPoints.length; i++) {
@@ -346,11 +356,12 @@
         }
     }
 
-    $('#imei-select').on('change', function() {
-        alert( this.value );
+    $('#imei-select').on('change', function () {
         imei = this.value;
         map = '';
+        marker= null;
         initMap();
+
     })
 </script>
 <script
