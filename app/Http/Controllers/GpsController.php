@@ -10,19 +10,19 @@ use Carbon\Carbon;
 
 class GpsController extends Controller
 {
- public function storeCoords(Request $request)
- {
-     $cars = Car::all();
- 	return view('newmap',compact('cars'));
- }
- 
+    public function storeCoords(Request $request)
+    {
+        $cars = Car::all();
+    }
 
- public function sendCoordinates(Request $request,$imei)
- {
- 		$coordinates = LiveData::where('imei',$imei)->get();
 
- 		$coordinates = json_encode($coordinates);
- 		return ($coordinates);
- }
+    public function sendCoordinates(Request $request, $imei)
+    {
+        $startTime = Carbon::now()->subRealHour(5)->toDateTimeString();
+        $endTime = Carbon::now()->toDateTimeString();
+        $coordinates = LiveData::where('imei', $imei)->whereBetween('created_at', [$startTime, $endTime])->get();
+        $coordinates = json_encode($coordinates);
+        return ($coordinates);
+    }
 
 }
