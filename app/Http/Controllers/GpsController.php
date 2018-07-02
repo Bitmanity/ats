@@ -13,6 +13,8 @@ class GpsController extends Controller
     public function storeCoords(Request $request)
     {
         $cars = Car::all();
+        return view('newmap', compact('cars'));
+        
     }
 
 
