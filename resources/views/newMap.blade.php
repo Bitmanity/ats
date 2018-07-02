@@ -293,8 +293,21 @@
             var latlng = result[i]['latitude'] + "," + result[i]['longitude'];
             pathPoints.push(latlng);
         }
-        snapRoads(pathPoints);
+        processPoints(result);
     }
+
+ function processPoints(data) {
+     snappedCoordinates = [];
+     for (i=0;i<data.length;i++)
+     {
+         var latlng = new google.maps.LatLng(
+             data[i]['latitude'],
+             data[i]['longitude']);
+         snappedCoordinates.push(latlng);
+
+     }
+     drawSnappedPolyline();
+ }
 
     function snapRoads(path) {
         $.get('https://roads.googleapis.com/v1/snapToRoads', {
@@ -316,6 +329,7 @@
             strokeWeight: 3
         });
         snappedPolyline.setMap(map);
+
     }
     function processSnapRoadPoints(data) {
         snappedCoordinates = [];
