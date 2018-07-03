@@ -293,7 +293,7 @@
             var latlng = result[i]['latitude'] + "," + result[i]['longitude'];
             pathPoints.push(latlng);
         }
-        processPoints(result);
+      snapRoads(pathPoints);
     }
 
  function processPoints(data) {
