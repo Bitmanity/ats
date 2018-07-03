@@ -345,7 +345,7 @@
 
     $('#imei-select').on('change', function () {
         imei = this.value;
-        map = '';
+        map = null;
         marker= null;
         initMap();
     })
