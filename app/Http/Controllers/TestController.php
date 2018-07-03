@@ -17,9 +17,8 @@ class TestController extends Controller
     {
 
         Loop::run(function () {
-            $uri = "tcp://139.59.81.69:8555";
-
-            $clientHandler = function (ServerSocket $socket) {
+            $uri = "tcp://127.0.0.1:8555";
+          $clientHandler = function (ServerSocket $socket) {
                 $buffer = '';
                 $count = 0;
                 while (null !== $chunk = yield $socket->read()) {
