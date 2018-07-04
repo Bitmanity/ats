@@ -2,30 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
+use App\LiveData;
 use Illuminate\Http\Request;
 use App\Coordinate;
 use Carbon\Carbon;
 
 class GpsController extends Controller
 {
- public function storeCoords(Request $request)
- {
- 	$inputs = $request->all();
- 	 if($inputs!=null){
- 	 $coord = new Coordinate();
+    public function storeCoords(Request $request)
+    {
+        $cars = Car::all();
+        return view('newMap', compact('cars'));
 
- 	$coord->received_data = $inputs;
- 	$coord->save();
- 	echo "#200#";
- }
- 
- }
- public function sendCoordinates(Request $request)
- {
- 		$time = Carbon::today();
- 		$coordinates = Coordinate::where('id','>=',1)->get();
- 		$coordinates = json_encode($coordinates);
- 		return ($coordinates);
- }
+    }
+
+
+    public function sendCoordinates(Request $request, $imei)
+    {
+
+        $coordinates = LiveData::where('imei', $imei)->latest()->limit(75)->get();
+        $coordinates = json_encode($coordinates);
+        return ($coordinates);
+    }
 
 }

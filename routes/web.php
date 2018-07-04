@@ -13,4 +13,4 @@
 
 Route::get('/','GpsController@storeCoords' );
 Route::get('/test','GpsController@storeCoords');
-Route::get('getPoints','GpsController@sendCoordinates');
+Route::get('getPoints/{id}','GpsController@sendCoordinates');
