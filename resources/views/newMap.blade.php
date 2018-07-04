@@ -280,8 +280,8 @@
             success: function (data) {
                 data = JSON.parse(data);
                 marker.setPosition({
-                    lat: (Number(data[data.length - 1]['latitude'])),
-                    lng: Number((data[data.length - 1]['longitude']))
+                    lat: (Number(data[0]['latitude'])),
+                    lng: Number((data[0]['longitude']))
                 });
                 getPathPoints(data);
             }
@@ -289,7 +289,7 @@
     }
     function getPathPoints(result) {
         var pathPoints = [];
-        for (var i = 0; i < result.length; i++) {
+        for (var i = result.length-1; i >= 0; i--) {
             var latlng = result[i]['latitude'] + "," + result[i]['longitude'];
             pathPoints.push(latlng);
         }
